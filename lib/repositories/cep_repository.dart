@@ -3,15 +3,15 @@ import 'dart:convert';
 import 'package:bechannel/models/cep_model.dart';
 import 'package:http/http.dart' as http;
 
-Future<CepModel> doLogin(String email, String password) async {
-  final int numCep = 0;
+Future<CepModel> requestCep(String cep) async {
+  
 
-  final response = await http.post(
-    Uri.parse('https://viacep.com.br/ws/69059198/json'),
+  final response = await http.get(
+    Uri.parse('https://viacep.com.br/ws/$cep/json'),
     headers: <String, String>{
       'Content-Type': 'application/json; charset=UTF-8',
     },
-    body: jsonEncode(<String, String>{"email": email, "password": password}),
+    
   );
   print(response.body);
 

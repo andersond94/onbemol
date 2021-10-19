@@ -1,8 +1,9 @@
 import 'package:bechannel/components/customTextField.dart';
-import 'package:bechannel/views/home_page.dart';
 import 'package:bechannel/views/signin_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
+
+import 'form_signin.dart';
 
 //CLASSE QUE EXIBE CAMPOS DE CAPTURA DE INFORMAÇÕES
 class LoginPage extends StatelessWidget {
@@ -65,7 +66,7 @@ class __PageState extends State<_Page> {
                       ),
                     ),
                   ),
-                  _logoLogin(),
+                  _LogoLogin(),
                   SizedBox(
                     height: 8,
                   ),
@@ -100,10 +101,11 @@ class __PageState extends State<_Page> {
                       NeumorphicButton(
                           margin: EdgeInsets.only(top: 12),
                           onPressed: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => HomePage()));
+                            
+                            // Navigator.push(
+                            //     context,
+                            //     MaterialPageRoute(
+                            //         builder: (context) => HomePage()));
                           },
                           style: NeumorphicStyle(
                             shape: NeumorphicShape.flat,
@@ -126,7 +128,7 @@ class __PageState extends State<_Page> {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => StepperForm()));
+                                    builder: (context) => FormSignin()));
                           },
                           style: NeumorphicStyle(
                             shape: NeumorphicShape.flat,
@@ -173,7 +175,7 @@ class __PageState extends State<_Page> {
   }
 }
 
-class _logoLogin extends StatelessWidget {
+class _LogoLogin extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(
